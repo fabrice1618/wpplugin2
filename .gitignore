@@ -1,10 +1,8 @@
-/wp-includes/
-/wp-admin/
-/*.php
-.htaccess
-license.txt
-readme.html
-/wp-content/languages
-/wp-content/upgrade
-/wp-content/uploads
-
+# Le repository ne doit contenir que le code spécifique est pas le standard wordpress
+# exclu tous les fichiers sauf le répertoire /wp-content/themes/twentytwenty-child
+/*
+!/wp-content
+/wp-content/*
+!/wp-content/themes
+/wp-content/themes/*
+!/wp-content/themes/twentytwenty-child
