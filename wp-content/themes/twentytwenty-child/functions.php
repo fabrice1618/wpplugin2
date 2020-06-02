@@ -1,22 +1,24 @@
 <?php 
 
+// Activation de la feuille de style du theme parent
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
 function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 
+
 // Création du "Custom Post Type" pour les événements
-function evenements_init() {
+function f1618_evenements_init() {
     $args = array(
-      'label' => 'Evenements',
-        'public' => true,
-        'show_ui' => true,
+        'label' => 'Evenements',
+        'public' => true,               // Données publiques
+        'show_ui' => true,              // modifiables dans l'interface d'admin
         'capability_type' => 'post',
         'hierarchical' => false,
-        'show_in_rest' => true,
-        'rewrite' => array('slug' => 'evenements'),
+        'show_in_rest' => true,         // Visible dans l'API
         'query_var' => true,
-        'menu_icon' => 'dashicons-video-alt',
+        'menu_icon' => 'dashicons-calendar-alt',
         'supports' => array(
             'title',
             'editor',
@@ -27,6 +29,6 @@ function evenements_init() {
             'author',
             'page-attributes',)
         );
-    register_post_type( 'evenements', $args );
+    register_post_type( 'f1618_evenements', $args );
 }
-add_action( 'init', 'evenements_init' );
+add_action( 'init', 'f1618_evenements_init' );
