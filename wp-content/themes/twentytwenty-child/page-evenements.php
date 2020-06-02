@@ -22,6 +22,7 @@ if( have_posts() ) : while( have_posts() ) : the_post();
 	if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : 
 		$my_query->the_post();
 
+        // Affichage d'un evenement
         echo '  <div class="post-inner thin ">
                 <div class="entry-content">    ';
         the_title('<h2>', '</h2>'); // Titre de chaque article
