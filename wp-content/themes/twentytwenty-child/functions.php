@@ -32,3 +32,19 @@ function f1618_evenements_init() {
     register_post_type( 'f1618_evenements', $args );
 }
 add_action( 'init', 'f1618_evenements_init' );
+
+// Ajout du champ custom 'date-evenement' à l'API REST
+function rest_add_date_evenement() {
+    register_rest_field( 'f1618_evenements',
+        'date-evenement',
+        array(
+            'get_callback'  => 'rest_get_date_evenement',
+            'update_callback'   => null,
+            'schema'            => null,
+         )
+    );
+}
+function rest_get_date_evenement( $object, $field_name, $request ) {
+    return(get_post_meta($object['id'], 'date-evenement', true));
+}
+add_action( 'rest_api_init', 'rest_add_date_evenement' );

@@ -6,3 +6,6 @@
 !/wp-content/themes
 /wp-content/themes/*
 !/wp-content/themes/twentytwenty-child
+!/wp-content/plugins
+/wp-content/plugins/*
+!/wp-content/plugins/reservation-evenements
