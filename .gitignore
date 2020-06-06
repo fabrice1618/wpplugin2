@@ -9,3 +9,4 @@
 !/wp-content/plugins
 /wp-content/plugins/*
 !/wp-content/plugins/reservation-evenements
+!/wp-content/plugins/sea-plugin
